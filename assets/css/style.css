@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+/* 
+font-family: 'Arimo', sans-serif; 2 
+font-family: 'Montserrat', sans-serif; 1
+font-family: 'Titillium Web', sans-serif; 3
+ */
+.app-container {
+    display: flex;
+    flex-direction: column;
+}
+.current-searchbar-container{
+    min-width: 21.875rem;
+    height: 2.5rem;
+    background-color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.current-searchbar {
+    border-style: none;
+    min-width: 16rem;
+    height: 1.8rem;
+}
+.current-submit {
+    border-style: none;
+    height: 1.563rem;
+    width: 3.5rem;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: rgb(98, 98, 255);
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+}
+.app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(56, 56, 255);
+    border-radius: 0px 0px 30px 30px;
+    height: 45vh;
+    min-width: 375px;
+    width: auto;
+}
+.dfc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.current-main {
+    padding-top: 4.375rem;
+}
+.current-city {
+    font-size: 43px;
+    font-family:'Montserrat', sans-serif;
+    color: white;
+}
+.current-date {
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+    color: white;
+}
+.current-img {
+    height: 160px;
+    width: 160px;
+}
+
+
+.current-img-container {
+    text-align:center;
+}
+
+.current-forecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50%;
+    min-width: 20rem;
+    width: 90%;
+    height: 5.625rem;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: rgba(88, 88, 88, 0.356) 0px 3px 6px 1px;
+}
+.current-name {
+    font-size: 0.688rem;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+}
+.current-value {
+    font-size: 1.625rem;
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+}
+.current-mid {
+    border-right: 1px solid;
+    border-left: 1px solid;
+    padding: 0px 20px;
+    margin: 0px 20px;
+}
+
+.app-body {
+    background-color: rgb(255, 255, 255);
+    min-height:50vh;
+    min-width: 375px;
+    width: auto;
+}
+.githublink {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 25px;
+   
+}
+.githubtext {
+    border-style: none;
+    background-color: rgb(255, 255, 255);
+    
+}
+.githubtext * {
+    color:#2f57f6;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.githubclick {
+    color: white;
+}
+.table-container {
+    min-width: 20rem;
+    width: 90%;
+    /* min-height: 21.875rem; */
+    /* height: 25rem; */
+    margin: auto;
+    border-radius: 30px;
+    box-shadow: rgba(88, 88, 88, 0.356) 0px 3px 6px 1px;
+}
+
+table {
+    margin-top: 3.75rem;
+    font-size: 0.938rem;
+    font-size: 1.263rem;
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+}
+
+table td {
+    padding:8px
+}
+
+td {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0.938rem;
+}
+input:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+}
+/* ------------------------------------------  */
+.current-forecast {
+    display: flex;
+
+}
+
+@media only screen and (min-width: 768px) {
+    .app-container {
+    flex-direction: row;
+    }
+    .app-header {
+    width: 50%;
+    height:100vh;
+    border-radius: 0 30px 30px 0px;
+    }
+    .app-body {
+    width: 50%;
+    height: 100%;
+    margin-top: 150px;
+    }
+    .current-forecast {
+    max-width: 35rem;
+    position: relative;
+    bottom: 0px;
+    }
+    .current-searchbar-container{
+        display: flex;
+      
+    }
+    .current-main {
+        padding-top: 9.375em;
+    }
+    .githublink {
+        display: block;
+    }
+    .githubclick {
+        color: rgb(56, 56, 255);
+    }  
+}
+
+/* @media only screen and (min-width: 1367px){
+   
+    .app-container {
+        flex-direction: column;
+    } 
+    .app-header {
+        width: 100%;
+        height: 50vh;
+    } 
+    .app-body {
+        width: 100%;
+        height: 50vh;
+        margin-top: 10px;
+    }
+    .githubtext {
+        background-color: rgb(56, 56, 255);
+        border-radius: 10px;
+        width: 80px;
+        height: 30px;
+    }
+    .githubclick {
+        color: white;
+    }  
+    .current-forecast {
+        position: relative;
+        bottom: 22%;
+        max-width: 40rem;
+ 
+    }
+} */
