@@ -9,17 +9,17 @@ const mainHumid = document.getElementById('current-humid');
 const mainUvi = document.getElementById('current-uvi');
 const curCity = document.getElementById('current-city-name')
 var searchedCities = []
+
 function getWeather(city) {
-    
   fetch(
     'https://api.openweathermap.org/data/2.5/weather?q=' +
     city +
       '&units=imperial&appid=822885dbd372247ac84e0b86f3009f81'
   )
     .then((response) => response.json())
+    .catch((err) => console.log(err))
     .then((data) => {
       // fetch lon and lat used for onecall fetch
-
       var lon = data.coord.lon;
       var lat = data.coord.lat;
       console.log(lon, lat)
@@ -32,23 +32,18 @@ function getWeather(city) {
       )
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
+          console.log(data)
+          var cityname =data.timezone
+          var citynamecut = cityname.substring(cityname.indexOf("/") + 1).replace(/_/g, ' ');
+          curCity.textContent = citynamecut
           getForecast(data);
         });
     });
 }
 
 submitBtnEl.addEventListener('click', function () {
-    var city = document.getElementById('current-searchbar').value;
-    // curCity.textContent = city
-    var splitCity = city.toLowerCase()
-    .split(' ')
-    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-    .join(' ');
-    var currentCity = document.getElementById('current-city-name');
-    currentCity.textContent = splitCity;
-    getWeather(splitCity)
-    storecity(splitCity)
+  var city = document.getElementById('current-searchbar').value
+  getWeather(city);
 });
 
 function getForecast(data) {
@@ -65,21 +60,10 @@ function getForecast(data) {
     currentDate.textContent = date;
   }
 }
-function storecity(cityx) {
-    searchedCities.push(cityx)
-    localStorage.setItem('city', JSON.stringify(searchedCities))
-//   localStorage.setItem('city', cityx) || []
+
+function savecity () {
   
-//   console.log(x)
-}
-function showcity() {
-    
 }
 
-// showcity();
 
-
-
-// getWeather('manila')
-
-
+getWeather('lOs aNgeLes')
